@@ -9,7 +9,7 @@ import fs from "fs";
 dotenv.config();
 const app = express();
 
-
+const uploadsDir = path.join(__dirname, "uploads");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/upload", express.static("upload"))

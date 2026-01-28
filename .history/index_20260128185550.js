@@ -1,23 +1,17 @@
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/database.js";
-import profileRouter from "./routes/route.user.js";
-import path from "path";
-import fs from "fs";
-
 
 dotenv.config();
 const app = express();
 
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/upload", express.static("upload"))
 
-app.use("/api/v1/users", profileRouter);
+app.use("/api/v1/users",)
 
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 connectDB();
 
 

@@ -4,12 +4,12 @@ import connectDB from "./config/database.js";
 import profileRouter from "./routes/route.user.js";
 import path from "path";
 import fs from "fs";
-
+import { fileURLToPath } from "url";
 
 dotenv.config();
 const app = express();
 
-
+const uploadsDir = path.join(__dirname, "uploads");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/upload", express.static("upload"))
